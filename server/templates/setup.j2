@@ -1,0 +1,11 @@
+def set_seed(config, seed=None):
+    seed = seed or config['training'].get('seed', config.get('SEED', 42))
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed_all(seed)
+
+def get_device(config, device=None):
+    device_str = device or config.get('DEVICE', 'cpu')
+    return torch.device(device_str if torch.cuda.is_available() else 'cpu')

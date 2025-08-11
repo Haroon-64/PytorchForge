@@ -1,0 +1,22 @@
+{% if "use_tensorboard" in config.monitoring %}
+from torch.utils.tensorboard import SummaryWriter
+writer = SummaryWriter()
+{% endif %}
+
+{% if "use_wandb" in config.monitoring %}
+import wandb
+wandb.init(project="default", config=config)
+{% endif %}
+
+{% if "use_mlflow" in config.monitoring %}
+import mlflow
+mlflow.start_run()
+{% endif %}
+
+{% if "threshold_alerts" in config.monitoring %}
+# Threshold logic
+{% endif %}
+
+{% if "resource_alerts" in config.monitoring %}
+# Resource logic
+{% endif %}

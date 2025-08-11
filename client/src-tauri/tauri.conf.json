@@ -1,0 +1,57 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
+  "productName": "Pytorch Forge",
+  "version": "../package.json",
+  "identifier": "com.pytorchforge",
+  "build": {
+    "frontendDist": "../build/client",
+    "devUrl": "http://localhost:5173",
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build"
+  },
+  "app": {
+    "withGlobalTauri": true,
+    "windows": [
+      {
+        "title": "Pytorch Forge",
+        "width": 800,
+        "height": 600,
+        "resizable": true,
+        "maximized": true,
+        "focus": false,
+        "label": "main"
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "createUpdaterArtifacts": true,
+    "externalBin": [
+      "bin/server"
+    ]
+  },
+  "plugins": {
+    "shell": {},  
+    "updater": {
+      "active": true,
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDM4N0QzOUZGRjQzRjFDMDYKUldRR0hELzAvemw5T0NVanhjU01zdTE1TEpvRjErN05Va0M2aWx0aGNuNm1na2pUT1FDTUNDRVAK",
+      "endpoints": [
+        "https://github.com/PytorchForge/client/releases/latest/download/latest.json"
+      ],
+      "windows": {
+        "installMode": "passive"
+      }
+    }
+  }
+}

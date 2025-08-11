@@ -1,0 +1,20 @@
+transforms = [
+{% for transform in config.preprocessing %}
+{% set params = transform.params %}
+{% if transform.name == "RegexTokenizer" %}
+    RegexTokenizer(pattern="{{ params.pattern }}"),
+{% elif transform.name == "SentencePieceTokenizer" %}
+    SentencePieceTokenizer(sp_model="{{ params.sp_model }}"),
+{% elif transform.name == "VocabTransform" %}
+    VocabTransform(vocab={{ params.vocab }}),
+{% elif transform.name == "Truncate" %}
+    Truncate(max_seq_len={{ params.max_seq_len }}),
+{% elif transform.name == "PadTransform" %}
+    PadTransform(max_length={{ params.max_length }}, pad_value={{ params.pad_value | default(0) }}),
+{% elif transform.name == "AddToken" %}
+    AddToken(token="{{ params.token }}", begin={{ params.begin | default(True) | lower }}),
+{% elif transform.name == "ToTensorText" %}
+    ToTensor(dtype={{ params.dtype | default("torch.long") }}),
+{% endif %}
+{% endfor %}
+]

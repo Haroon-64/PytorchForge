@@ -1,0 +1,28 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "Capability for the main window",
+  "windows": ["main"],
+  "permissions": [
+    "core:app:default",
+    "core:event:default",
+    "core:window:default",
+    "core:webview:default",
+    "dialog:default",
+    "fs:allow-write-text-file",
+    "updater:default",
+    "process:default",
+    "process:allow-restart",
+    {
+      "identifier": "shell:allow-spawn",
+      "allow": [
+        {
+          "name": "bin/server",
+          "sidecar": true,
+          "args": true
+        }
+      ]
+    }
+    
+  ]
+}

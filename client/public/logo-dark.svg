@@ -1,0 +1,23 @@
+<svg width="548" height="548" viewBox="0 0 548 548" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_g_224_102)">
+<path d="M268.5 87.8906L255.874 100.518L155.399 200.991C89.9798 265.544 90.0093 370.783 155.347 436.149V436.15C219.909 501.579 325.167 501.54 390.532 436.176C454.632 372.897 455.862 270.551 394.356 204.971L425.119 174.208C503.7 256.857 502.426 385.793 421.688 466.933L421.678 466.943L421.67 466.953C340.915 548.931 208.334 549.363 126.311 466.933C44.2724 384.485 44.286 251.867 126.302 169.852L268.5 27.6533V87.8906Z" stroke="#A98850" stroke-width="11"/>
+<path d="M377.722 126.504C378.008 111.012 365.682 98.2208 350.19 97.9339C334.699 97.647 321.907 109.973 321.62 125.465C321.333 140.957 333.66 153.748 349.151 154.035C364.643 154.322 377.435 141.996 377.722 126.504Z" fill="#A98850"/>
+<g clip-path="url(#clip0_224_102)">
+<path d="M356.797 241.985L327.946 243.722L333.811 231.21L294.505 212.584L288.322 225.768C272.567 220.476 257.408 219.961 247.006 223.312L247.008 223.319C245.52 223.786 244.159 224.46 242.877 225.083C238.858 227.05 235.973 229.703 234.474 232.893L275.809 252.468L270.105 264.637L277.873 268.316C251.315 320.202 218.168 366.874 205.844 422.871L229.494 433.959C265.1 386.736 278.501 334.645 302.069 279.775L309.416 283.255L315.281 270.743L332.408 294.022L352.692 303.524C372.244 289.937 378.412 271.934 377.09 251.465L356.805 241.956L356.797 241.985Z" fill="#A98850"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_g_224_102" x="0" y="0" width="548" height="548" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feTurbulence type="fractalNoise" baseFrequency="0.28571429848670959 0.28571429848670959" numOctaves="3" seed="8420" />
+<feDisplacementMap in="shape" scale="12" xChannelSelector="R" yChannelSelector="G" result="displacedImage" width="100%" height="100%" />
+<feMerge result="effect1_texture_224_102">
+<feMergeNode in="displacedImage"/>
+</feMerge>
+</filter>
+<clipPath id="clip0_224_102">
+<rect x="160.002" y="233.7" width="215" height="215" rx="20" transform="rotate(-12 160.002 233.7)" fill="white"/>
+</clipPath>
+</defs>
+</svg>

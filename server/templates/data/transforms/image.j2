@@ -1,0 +1,26 @@
+transforms = [
+{% for transform in config.preprocessing %}
+{% set params = transform.params %}
+{% if transform.name == "Resize" %}
+    T.Resize(size={{ params.size }}),
+{% elif transform.name == "Normalize" %}
+    T.Normalize(mean={{ params.mean }}, std={{ params.std }}),
+{% elif transform.name == "RandomCrop" %}
+    T.RandomCrop(size={{ params.size }}, padding={{ params.padding | default(None) }}),
+{% elif transform.name == "RandomHorizontalFlip" %}
+    T.RandomHorizontalFlip(p={{ params.p | default(0.5) }}),
+{% elif transform.name == "ColorJitter" %}
+    T.ColorJitter(brightness={{ params.brightness }}, contrast={{ params.contrast }}, saturation={{ params.saturation }}, hue={{ params.hue }}),
+{% elif transform.name == "Grayscale" %}
+    T.Grayscale(num_output_channels={{ params.num_output_channels | default(1) }}),
+{% elif transform.name == "RandomRotation" %}
+    T.RandomRotation(degrees={{ params.degrees }}, interpolation={{ params.interpolation | default('InterpolationMode.BILINEAR') }}),
+{% elif transform.name == "GaussianBlur" %}
+    T.GaussianBlur(kernel_size={{ params.kernel_size }}, sigma={{ params.sigma }}),
+{% elif transform.name == "RandomErasing" %}
+    T.RandomErasing(p={{ params.p | default(0.5) }}, scale={{ params.scale | default((0.02,0.33)) }}, ratio={{ params.ratio | default((0.3,3.3)) }}, value={{ params.value | default(0) }}),
+{% elif transform.name == "ToTensor" %}
+    T.ToTensor(),
+{% endif %}
+{% endfor %}
+]

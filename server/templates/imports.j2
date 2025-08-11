@@ -1,0 +1,49 @@
+import random
+from pathlib import Path
+import numpy as np
+import torch
+import json
+
+
+
+from torch.utils.data import DataLoader, Dataset
+
+{% if config.model.use_pretrained %}
+from torchvision import models
+{% endif %}
+
+import torch.nn as nn
+
+import torch.optim as optim
+
+{% if config.training.metrics %}
+import torchmetrics
+{% endif %}
+
+{% set main_task = config.main_task.lower() %}
+{% if "audio" in main_task %}
+import torchaudio
+import torchaudio.transforms  as T
+{% endif %}
+
+{% if "text" in main_task %}
+from torchtext.transforms import ToTensor
+from transformers import AutoTokenizer
+{% endif %}
+{% if "image" in main_task %}
+from torchvision import transforms as T
+from PIL import Image
+{% endif %}
+
+{% if config.sub_task.lower() == "text generation" %}
+from transformers import AutoModelForSeq2SeqLM
+from torchmetrics.text import BLEUScore
+{% endif %}
+
+{% if config.sub_task.lower() == "speech recognition" %}
+import torchaudio.functional as F
+{% endif %}
+
+{% if config.sub_task.lower() == "image segmentation" %}
+import segmentation_models_pytorch as smp
+{% endif %}

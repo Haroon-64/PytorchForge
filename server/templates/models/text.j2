@@ -1,0 +1,27 @@
+{% set model_name = config.model.pretrained.name %}
+
+{% if model_name == 'GloVe' %}
+model = models.GloVe(
+    dim={{ dim }},
+    name='{{ name }}'
+)
+{% elif model_name == 'FastText' %}
+model = models.FastText(
+    language='{{ language }}'
+)
+{% elif model_name == 'Transformer' %}
+model = models.Transformer(
+    d_model={{ d_model }},
+    nhead={{ nhead }},
+    num_encoder_layers={{ num_encoder_layers }},
+    num_decoder_layers={{ num_decoder_layers }}
+)
+{% elif model_name == 'XLMRoberta' %}
+model = models.XLMRoberta(
+    num_classes={{ num_classes }},
+    dropout={{ dropout }},
+    pooler_type='{{ pooler_type }}'
+)
+{% else %}
+print("Unsupported model type: {{ model_name }}")
+{% endif %}
