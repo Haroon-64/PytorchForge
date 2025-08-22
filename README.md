@@ -5,10 +5,14 @@
 - - choosing each step from data loading, task selection, creating dataloaders, building custom models, setting training and generating the code to run the pipeline
 
 # Future goals
+
+- fix windows and mac verisons so they work consistently.
 - run from the app
 - remove the code that still needs to be checked and verified
 - view and comapre results from runs
 - visualise the pipeline and model
+- add suggestions for each step
+
 # Backend For Pipelines
 
 - generate code for ML tasks using templates
@@ -45,7 +49,7 @@
 
 - - need to test with different configs, datasets, and actually building the dataloaders.
 
-3. convert the fastAPI app into rust based. there isnt much benefit of using python here.
+3. convert the fastAPI app into rust based or use pyo3 for a python app instead of pyinstaller.
 4. the dataloaders specifically have too much variation, trying to only
    use subset like other tasks isnt viable as you'd be either recreating the whole pytorch dataset or hardcode everything which defeats the point of a generic expandable system
 
@@ -59,4 +63,7 @@ rarely you might need to modify configs in modules/configs.
 
 
 for UI, just add the function similarly as typescript as in [client repo](https://github.com/suhaib-us/PytorchForge/tree/main/client%2Fapp%2Froutes%2Fnew-pipeline.dl._index%2Fsections)
+
+
+## Running the release 
 
