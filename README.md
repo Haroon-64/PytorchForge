@@ -66,4 +66,13 @@ for UI, just add the function similarly as typescript as in [client repo](https:
 
 
 ## Running the release 
+currently only linux version is tested to be working.
+to run, `download latest appImage or deb or rpm`, along with `pyproject.toml`.
+make sure you have python and for simplicity install uv via pip.
+
+`uv sync` to create venv and install libs, 
+activate the venv and run the appimage in it.
+
+
+*you can skip the venv and directly run if you install the libs as system packages in your distro, and then you can directly run the appimage*
 
