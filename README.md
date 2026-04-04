@@ -1,6 +1,6 @@
 # PyTorchForge: a low code platform for creating Deep Learning pipelines with minimal coding
 
-[2.0](https://github.com/Haroon-64/be_app)
+[2.0](https://github.com/Haroon-64/TorchForge)
 
 - This repo is the agrregate of the client here and the server from [here](https://github.com/Haroon-64/AutoPipeline)
 - current capabilities include:
